@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Place les éléments en haut */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.title-img {
+    display: block;
+    margin: 0 auto; /* Centrer l'image */
+    user-select: none;
+    pointer-events: none;
+    margin-bottom: 20px;
+    width: 100%; /* L'image prendra la largeur de son parent */
+    max-width: 500px; /* Limite la largeur maximale de l'image */
+    height: auto; /* Laisse l'image garder ses proportions */
+}
+
+
+body {
+    background-color: #f3c2dbcc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.container {
+    background: #ffffea;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adapte le nombre de colonnes */
+    grid-gap: 20px;
+    width: 100%; /* galerie prend toute la largeur */
+    max-width: 1200px; /* limite la largeur */
+    margin: 0 auto; /* centre la galerie */
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px; /* uniformise la hauteur */
+    object-fit: cover; /* coupe et centre les images */
+    border-radius: 10px; /* coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Ombre */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer; /* change le curseur pour montrer que c’est cliquable */
+}
+.gallery img:hover {
+    transform: scale(1.05); /* zoom léger */
+    filter: brightness(1); /* Rend l’image plus claire */
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+/* Image dans la Lightbox */
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Afficher la Lightbox */
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Écran de plus de 768px (tablettes et ordinateurs) */
+@media (min-width: 768px) {
+    .title-img {
+        width: 50%; /* réduit la taille de l'image du titre sur les écrans moyens */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Plus de colonnes sur des écrans plus larges */
+    }
+}
+
+/* Écran de plus de 480px (mobiles et tablettes) */
+@media (min-width: 480px) {
+    .title-img {
+        width: 75%; /* Image un peu plus grande sur mobile */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Plus de flexibilité sur les petites tailles */
+    }
+}
+
+/* Écran mobile (moins de 480px) */
+@media (max-width: 479px) {
+    .title-img {
+        width: 90%; /* Image encore plus petite sur les petits écrans */
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
+
+footer {
+    background-color:transparent;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    clear: both;
+    margin-top: 30px;
+    color :hwb(33 40% 27%);
+}
