@@ -13,7 +13,8 @@ const imagePaths = [
     "images/design_12.png",
     "images/design_13.png",
     "images/design_14.png",
-    "images/design_15.jpg"
+    "images/design_15.jpg",
+    "images/design_16.png"
   ];
 
   const gallery = document.getElementById('gallery');
